@@ -36,15 +36,27 @@ while True:
     pygame.draw.line(ventana, blanco, (0,400),  (100,200), 5)
     pygame.draw.line(ventana, blanco, (200,400), (100,200), 5)
 
-    # Montaña rusa
-    puntos_1 = [(250,400), (400,380), (500,200), (600,380), (750,400)]
+    # Carrusel
+    puntos_3 = [(700,250), (800,200), (900,250)]
+    pygame.draw.lines(ventana, rojo, False, puntos_3, 5)
+    puntos_4 = [(900,250), (700,250), (700,400), (900,400)]
+    pygame.draw.polygon(ventana, amarillo, puntos_4, 5)
+
+    # Valla
+    puntos_1 = [(0,380), (400,380), (450,200), (550,200), (600,380), (1000,380)]
+    puntos_2 = [(0,400), (400,400), (450,200), (550,200), (600,400), (1000,400)]
     pygame.draw.lines(ventana, azul, False, puntos_1, 5)
-    
+    pygame.draw.lines(ventana, azul, False, puntos_2, 50)
 
     # Letrero de el lugar
     fuente_arial = pygame.font.SysFont("Arial", 35, 1, 1)
-    texto = fuente_arial.render("Bambiland",1,blanco)
-    ventana.blit(texto, (200,30))
+    texto = fuente_arial.render("BAMBILAND",1,blanco)
+    ventana.blit(texto, (395,180))
+
+    # Autoria
+    fuente_arial = pygame.font.SysFont("Arial", 15, 1, 1)
+    texto = fuente_arial.render("MICHAELL MORALES",1,blanco)
+    ventana.blit(texto, (0,10))
 
     # actualizar visualización de la ventana
     pygame.display.flip()
